@@ -1,24 +1,22 @@
+# from carcollection.carcollection_app.models import Profile
 from django.shortcuts import render
-
-# Create your views here.
-# http://localhost:8000/ - index page
-# http://localhost:8000/profile/create - profile create page
-# http://localhost:8000/catalogue/ - catalogue page
-# http://localhost:8000/car/create/ - car create page
-# http://localhost:8000/car/<car-id>/details/ - car details page
-# http://localhost:8000/car/<car-id>/edit/ - car edit page
-# http://localhost:8000/car/<car-id>/delete/ - car delete page
-# http://localhost:8000/profile/details/ - profile details page
-# http://localhost:8000/profile/edit/ - profile edit page
-# http://localhost:8000/profile/delete/ - profile delete page
+from carcollection.carcollection_app.utils import get_profile
 
 
 def index(request):
-    pass
+    profile = get_profile()
+    context = {
+        'profile': profile,
+    }
+    return render(request, 'index.html', context)
 
 
 def create_profile(request):
-    pass
+
+    context = {
+
+    }
+    return render(request, 'profile-create.html', context)
 
 
 def catalogue(request):
