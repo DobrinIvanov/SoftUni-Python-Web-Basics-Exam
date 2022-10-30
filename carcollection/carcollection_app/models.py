@@ -81,6 +81,11 @@ class Car(models.Model):
         validators=(Between1980_2049Validator, )
     )
 
+    image_url = models.URLField(
+        null=False,
+        blank=False,
+    )
+
     price = models.FloatField(
         null=False,
         blank=False,
